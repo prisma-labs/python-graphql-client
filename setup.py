@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='graphqlclient',
-      version='0.1.0',
+      version='0.1.1',
       description='Simple GraphQL client for Python 2.7+',
       url='https://github.com/graphcool/python-graphql-client',
       author='graph.cool',

@@ -15,6 +15,11 @@ class GraphQLClient:
                    'Content-Type': 'application/json'}
 
         req = urllib2.Request(self.endpoint, json.dumps(data), headers)
-        response = urllib2.urlopen(req)
 
-        return response.read()
+        try:
+            response = urllib2.urlopen(req)
+            return response.read()
+        except urllib2.HTTPError, e:
+            print(e.read())
+            print('')
+            raise e

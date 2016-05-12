@@ -7,7 +7,7 @@ def main():
 
     result = client.execute('''
     {
-      allFilms {
+      allFilmsa {
         films {
           title
         }
