@@ -5,7 +5,7 @@ from graphqlclient import GraphQLClient
 def main():
     client = GraphQLClient('http://graphql-swapi.parseapp.com/')
 
-    print(client.execute('''
+    result = client.execute('''
     {
       allFilms {
         films {
@@ -13,7 +13,9 @@ def main():
         }
       }
     }
-        '''))
+        ''')
+
+    print(result)
 
 if __name__ == '__main__':
     main()
