@@ -1,4 +1,4 @@
-import urllib2
+from six.moves import urllib
 import json
 
 class GraphQLClient:
@@ -19,14 +19,14 @@ class GraphQLClient:
                    'Content-Type': 'application/json'}
 
         if self.token is not None:
-            headers['Authorization'] = 'Bearer %s' % self.token
+            headers['Authorization'] = 'Bearer {}'.format(self.token)
 
-        req = urllib2.Request(self.endpoint, json.dumps(data), headers)
+        req = urllib.request.Request(self.endpoint, json.dumps(data).encode('utf-8'), headers)
 
         try:
-            response = urllib2.urlopen(req)
-            return response.read()
-        except urllib2.HTTPError, e:
-            print(e.read())
+            response = urllib.request.urlopen(req)
+            return response.read().decode('utf-8')
+        except urllib.error.HTTPError as e:
+            print((e.read()))
             print('')
             raise e

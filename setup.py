@@ -8,4 +8,7 @@ setup(name='graphqlclient',
       author_email='hello@graph.cool',
       license='MIT',
       packages=['graphqlclient'],
+      install_requires=[
+          'six',
+      ],
       zip_safe=False)
