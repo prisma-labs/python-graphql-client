@@ -1,4 +1,4 @@
-import urllib2
+import urllib
 import json
 
 class GraphQLClient:
@@ -21,12 +21,12 @@ class GraphQLClient:
         if self.token is not None:
             headers['Authorization'] = 'Bearer %s' % self.token
 
-        req = urllib2.Request(self.endpoint, json.dumps(data), headers)
+        req = urllib.request(self.endpoint, json.dumps(data), headers)
 
         try:
-            response = urllib2.urlopen(req)
+            response = urllib.request.urlopen(req)
             return response.read()
-        except urllib2.HTTPError, e:
-            print(e.read())
+        except urllib.error.HTTPError as e:
+            print((e.read()))
             print('')
             raise e
