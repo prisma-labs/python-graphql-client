@@ -19,7 +19,7 @@ class GraphQLClient:
                    'Content-Type': 'application/json'}
 
         if self.token is not None:
-            headers['Authorization'] = 'Bearer {}'.format(self.token)
+            headers['Authorization'] = '{}'.format(self.token)
 
         req = urllib.request.Request(self.endpoint, json.dumps(data).encode('utf-8'), headers)
 
