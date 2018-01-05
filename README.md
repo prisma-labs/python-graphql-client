@@ -28,6 +28,14 @@ result = client.execute('''
 print(result)
 ```
 
+### Authorization
+
+Authorization tokens can be added to the request using the client's `inject_token` method:
+
+```
+client.inject_token('very-long-and-secure-token')
+```
+
 ## License
 
 [MIT License](http://opensource.org/licenses/MIT)
