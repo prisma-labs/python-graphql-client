@@ -12,6 +12,7 @@ class GraphQLClient:
 
     def inject_token(self, token, headername='Authorization'):
         self.token = token
+        self.headername = headername
 
     def _send(self, query, variables):
         data = {'query': query,
