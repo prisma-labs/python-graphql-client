@@ -35,12 +35,13 @@ Authorization tokens can be added to the request using the client's `inject_toke
 ```py
 client.inject_token('very-long-and-secure-token')
 ```
-which defaults to http header name 'Authorization'. An alternative http header name for the token can be set by passing in the alternative header name, e.g. for 'x-api-key':
+
+which defaults to http header name `Authorization`.
+An alternative http header name for the token can be set by passing in the alternative header name, e.g. for `x-api-key`:
 
 ```py
 client.inject_token('very-long-and-secure-token','x-api-key')
 ```
-
 
 ## License
 
